@@ -6,6 +6,12 @@
  */
 function greet(name) {
   // Your code here
+  if (name){
+    console.log("Hello",name)
+  }
+  else{
+    console.log("Hello")
+  };
 }
 
 /**
@@ -15,6 +21,12 @@ function greet(name) {
  */
 function isOdd(n) {
   // Your code here
+  if (n % 2 === 0){
+    return false
+  }
+  else{
+    return true
+  }
 }
 
 /**
@@ -30,6 +42,11 @@ function isOdd(n) {
  */
 function oddsSmallerThan(n) {
   // Your code here
+  let S = n / 2;
+  if (n % 2 != 0)  
+  S+= 1; 
+
+return N; 
 }
 
 /**
@@ -44,6 +61,12 @@ function oddsSmallerThan(n) {
  */
 function squareOrDouble(n) {
   // Your code here
+  if (n % 2 ===0){
+    return n * 2
+  }
+  else {
+    return Math.pow(n,(1/2))
+  }
 }
 
 /**
@@ -66,7 +89,24 @@ function ageFromBirthDate(birthDate) {
   const _MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365;
 
   // Your code here
+  let today = new Date();
+  let day = today.getDate();
+  let month = today.getMonth()+1;
+  let year = today.getFullYear();
+  let date = parseInt(birthDate,10)
+  let dayB = date % 100
+  date = date / 100
+  let monthB = date % 100
+  date = date / 100
+  let yearB = date 
+  let age = year - yearB
+  if (month< monthB){
+    if (day < dayB){
+      age -=1
+    }
+  }
 }
+return age
 
 module.exports = {
   greet,
